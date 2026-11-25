@@ -18,6 +18,7 @@ jobs:
         with:
           command: buildozer android debug
           buildozer_version: stable
+          image: kivy/buildozer:stable # <--- ДОБАВЛЕНА ЭТА СТРОКА
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
