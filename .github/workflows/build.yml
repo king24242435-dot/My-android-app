@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-android:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # <--- ИЗМЕНЕНО ЗДЕСЬ (было ubuntu-latest)
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,9 +28,7 @@ jobs:
 
       - name: Build with Buildozer
         run: |
-          # Добавляем путь к локальным бинарникам в PATH
           export PATH=$PATH:~/.local/bin/
-          # Запускаем сборку
           buildozer android debug
 
       - name: Upload APK
